@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoky - Slow Motion Diagonal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .smoke-text {
+            display: flex;
+            gap: 50px; /* Espaço entre as letras ligeiramente maior */
+        }
+
+        .smoke-text span {
+            color: #fff;
+            font-size: 8rem;
+            font-weight: 900;
+            display: inline-block;
+            cursor: default;
+            
+            /* Duração da animação aumentada para 5 segundos */
+            transition: all 5s ease-in-out; 
+        }
+
+        /* Efeito ao passar o mouse: Sobe bastante para a DIREITA */
+        .smoke-text:hover span {
+            opacity: 0;
+            filter: blur(80px); /* Mais fumaça */
+            /* Deslocamento diagonal bem amplo */
+            transform: translate(300px, -400px) rotate(60deg) scale(3);
+        }
+
+        /* INTERVALOS (DELAYS) BEM MAIORES */
+        /* Agora temos 0.7s de espera entre o início de cada letra */
+        .smoke-text span:nth-child(1) { transition-delay: 0.0s; }
+        .smoke-text span:nth-child(2) { transition-delay: 0.7s; }
+        .smoke-text span:nth-child(3) { transition-delay: 1.4s; }
+        .smoke-text span:nth-child(4) { transition-delay: 2.1s; }
+        .smoke-text span:nth-child(5) { transition-delay: 2.8s; }
+
+    </style>
+</head>
+<body>
+
+    <div class="smoke-text">
+        <span>S</span>
+        <span>M</span>
+        <span>O</span>
+        <span>K</span>
+        <span>Y</span>
+    </div>
+
+</body>
+</html>
